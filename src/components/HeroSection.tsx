@@ -22,7 +22,7 @@ const HeroSection = () => {
         <span className="text-workshop-border">·</span>
         <span>Robotics</span>
         <span className="text-workshop-border">·</span>
-        <span>Software</span>
+        <span>Logistics</span>
       </div>
     </section>
   );
