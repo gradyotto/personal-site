@@ -67,7 +67,7 @@ const NodeGraphCanvas = () => {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const baseOpacity = (1 - dist / connectionDist) * 0.3;
+            const baseOpacity = (1 - dist / connectionDist) * 0.45;
             // Brighten connections near cursor
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
