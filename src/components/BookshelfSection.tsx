@@ -3,6 +3,7 @@ interface BookEntry {
   author: string;
   takeaway: string;
   category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals";
+  status?: "Read" | "In Progress" | "Queue";
 }
 
 const books: BookEntry[] = [
@@ -35,6 +36,20 @@ const books: BookEntry[] = [
     author: "Tracy Kidder",
     takeaway: "Great engineering is equal parts obsession and craft—the best teams are small and unreasonable.",
     category: "Industrial History & Strategy",
+  },
+  {
+    title: "Made in the USA: The Rise and Retreat of American Manufacturing",
+    author: "Vaclav Smil",
+    takeaway: "A data-rich history of how America built—and then dismantled—its industrial base.",
+    category: "Industrial History & Strategy",
+    status: "Read",
+  },
+  {
+    title: "Freedom's Forge",
+    author: "Arthur Herman",
+    takeaway: "How American industry mobilized for WWII—proof that manufacturing scale is a national security asset.",
+    category: "Industrial History & Strategy",
+    status: "In Progress",
   },
   {
     title: "ROS 2 Documentation",
@@ -74,6 +89,17 @@ const BookshelfSection = () => {
                     <div>
                       <span className="font-mono font-bold text-sm">{book.title}</span>
                       <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
+                      {book.status && (
+                        <span className={`font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border ${
+                          book.status === "Read"
+                            ? "text-green-400 border-green-400/30"
+                            : book.status === "In Progress"
+                            ? "text-primary border-primary/30"
+                            : "text-dim border-border"
+                        }`}>
+                          {book.status}
+                        </span>
+                      )}
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed italic">
                       "{book.takeaway}"

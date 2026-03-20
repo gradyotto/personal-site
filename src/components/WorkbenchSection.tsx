@@ -6,6 +6,7 @@ interface ProjectCard {
   tags: string[];
   featured?: boolean;
   status: string;
+  url?: string;
 }
 
 const projects: ProjectCard[] = [
@@ -16,9 +17,10 @@ const projects: ProjectCard[] = [
     tags: ["Manufacturing", "AI", "CNC"],
     featured: true,
     status: "Active",
+    url: "https://www.tibermfg.com",
   },
   {
-    title: "Microfactory OS",
+    title: "Phalanx - Microfactory OS",
     description:
       "Modular software stack for small-batch, high-mix manufacturing cells. Bridging ERP with real-time machine data.",
     tags: ["Software", "IoT", "MES"],
@@ -51,10 +53,14 @@ const WorkbenchSection = () => {
       <div className="h-px bg-border mb-10" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        {projects.map((project) => (
-          <div
+        {projects.map((project) => {
+          const Wrapper = project.url ? 'a' : 'div';
+          const wrapperProps = project.url ? { href: project.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+          return (
+          <Wrapper
             key={project.title}
-            className={`group p-5 border transition-all cursor-pointer hover:border-primary/40 ${
+            {...wrapperProps}
+            className={`group p-5 border transition-all cursor-pointer hover:border-primary/40 block ${
               project.featured
                 ? "border-primary/30 bg-card md:col-span-2"
                 : "border-border bg-card"
@@ -89,8 +95,9 @@ const WorkbenchSection = () => {
                 {project.status}
               </span>
             </div>
-          </div>
-        ))}
+          </Wrapper>
+          );
+        })}
       </div>
     </section>
   );
