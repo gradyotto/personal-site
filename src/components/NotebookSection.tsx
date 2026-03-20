@@ -1,42 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-
-interface Essay {
-  title: string;
-  date: string;
-  readTime: string;
-  excerpt: string;
-}
-
-const essays: Essay[] = [
-  {
-    title: "Why American Dynamism Needs AI",
-    date: "2025.03",
-    readTime: "8 min",
-    excerpt:
-      "The case for deploying frontier AI models not just in software, but on the factory floor—where the real leverage lives.",
-  },
-  {
-    title: "Lessons from the Machine Shop Floor",
-    date: "2025.01",
-    readTime: "12 min",
-    excerpt:
-      "What six months of running CNC machines taught me about feedback loops, tolerances, and building things that matter.",
-  },
-  {
-    title: "Bridging Bits and Atoms",
-    date: "2024.11",
-    readTime: "6 min",
-    excerpt:
-      "Software engineers underestimate hardware. Hardware engineers underestimate software. The opportunity lives in the gap.",
-  },
-  {
-    title: "The Reshoring Imperative",
-    date: "2024.09",
-    readTime: "10 min",
-    excerpt:
-      "Supply chain fragility isn't a theory—it's a quarterly earnings risk. How small manufacturers can lead the reshoring charge.",
-  },
-];
+import { Link } from "react-router-dom";
+import { articles } from "@/content/articles";
 
 const NotebookSection = () => {
   return (
@@ -49,10 +13,11 @@ const NotebookSection = () => {
       <div className="h-px bg-border mb-10" />
 
       <div className="space-y-0">
-        {essays.map((essay, i) => (
-          <article
-            key={essay.title}
-            className="group py-5 cursor-pointer border-b border-border last:border-b-0 hover:pl-2 transition-all hover:bg-card/50"
+        {articles.map((article, i) => (
+          <Link
+            key={article.slug}
+            to={`/articles/${article.slug}`}
+            className="group block py-5 cursor-pointer border-b border-border last:border-b-0 hover:pl-2 transition-all hover:bg-card/50"
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
@@ -61,22 +26,22 @@ const NotebookSection = () => {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="font-mono text-[10px] text-dim tracking-wider">
-                    {essay.date}
+                    {article.date}
                   </span>
                   <span className="font-mono text-[10px] text-dim tracking-wider">
-                    {essay.readTime}
+                    {article.readTime}
                   </span>
                 </div>
                 <h3 className="font-mono font-bold text-base md:text-lg group-hover:text-primary transition-colors">
-                  {essay.title}
+                  {article.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mt-2 max-w-xl">
-                  {essay.excerpt}
+                  {article.excerpt}
                 </p>
               </div>
               <ArrowUpRight className="w-4 h-4 mt-8 text-dim group-hover:text-primary transition-colors flex-shrink-0" />
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>
