@@ -20,9 +20,13 @@ const NodeGraphCanvas = () => {
     if (!ctx) return;
 
     const resize = () => {
+      const parent = canvas.parentElement;
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = parent ? parent.scrollHeight : document.body.scrollHeight;
     };
+    resize();
+    // Re-measure after content renders
+    const resizeTimer = setTimeout(resize, 500);
     resize();
     window.addEventListener("resize", resize);
 
