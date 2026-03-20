@@ -25,18 +25,15 @@ const NodeGraphCanvas = () => {
       canvas.height = parent ? parent.scrollHeight : document.body.scrollHeight;
     };
     resize();
-    // Re-measure after content renders
     const resizeTimer = setTimeout(resize, 500);
-    resize();
     window.addEventListener("resize", resize);
 
-    // Initialize nodes
     const count = Math.floor((window.innerWidth * window.innerHeight) / 18000);
     nodesRef.current = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
     }));
 
     const handleMouse = (e: MouseEvent) => {
@@ -52,7 +49,6 @@ const NodeGraphCanvas = () => {
       const nodes = nodesRef.current;
       const mouse = mouseRef.current;
 
-      // Update positions
       for (const node of nodes) {
         node.x += node.vx;
         node.y += node.vy;
@@ -60,24 +56,22 @@ const NodeGraphCanvas = () => {
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
       }
 
-      // Draw connections (always visible)
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const baseOpacity = (1 - dist / connectionDist) * 0.45;
-            // Brighten connections near cursor
+            const baseOpacity = (1 - dist / connectionDist) * 0.3;
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
             const mDist = Math.sqrt((midX - mouse.x) ** 2 + (midY - mouse.y) ** 2);
             if (mDist < mouseDist) {
-              const boost = (1 - mDist / mouseDist) * 0.2;
+              const boost = (1 - mDist / mouseDist) * 0.25;
               ctx.strokeStyle = `hsla(24, 95%, 53%, ${baseOpacity + boost})`;
               ctx.lineWidth = 0.8;
             } else {
-              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity * 1.2})`;
+              ctx.strokeStyle = `rgba(50, 55, 65, ${baseOpacity + 0.1})`;
               ctx.lineWidth = 0.5;
             }
             ctx.beginPath();
@@ -88,7 +82,6 @@ const NodeGraphCanvas = () => {
         }
       }
 
-      // Draw nodes (always visible)
       for (const node of nodes) {
         const mdx = node.x - mouse.x;
         const mdy = node.y - mouse.y;
@@ -96,10 +89,10 @@ const NodeGraphCanvas = () => {
         const isNearMouse = mDist < mouseDist;
 
         ctx.fillStyle = isNearMouse
-          ? `hsla(24, 95%, 53%, ${0.4 * (1 - mDist / mouseDist) + 0.2})`
-          : "rgba(120, 120, 130, 0.5)";
+          ? `hsla(24, 95%, 53%, ${0.45 * (1 - mDist / mouseDist) + 0.15})`
+          : "rgba(50, 55, 65, 0.5)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.8, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.5, 0, Math.PI * 2);
         ctx.fill();
       }
 
