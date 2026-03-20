@@ -17,6 +17,7 @@ const projects: ProjectCard[] = [
     tags: ["Manufacturing", "AI", "CNC"],
     featured: true,
     status: "Active",
+    url: "https://www.tibermfg.com",
   },
   {
     title: "Microfactory OS",
