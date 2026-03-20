@@ -109,6 +109,7 @@ const NodeGraphCanvas = () => {
     draw();
 
     return () => {
+      clearTimeout(resizeTimer);
       cancelAnimationFrame(animRef.current);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouse);
