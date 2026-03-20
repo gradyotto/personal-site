@@ -36,23 +36,23 @@
 
 @layer base {
   :root {
-    --background: 210 6% 97%;
-    --foreground: 220 10% 12%;
+    --background: 220 14% 8%;
+    --foreground: 210 20% 88%;
 
-    --card: 210 6% 94%;
-    --card-foreground: 220 10% 12%;
+    --card: 220 14% 11%;
+    --card-foreground: 210 20% 88%;
 
-    --popover: 210 6% 97%;
-    --popover-foreground: 220 10% 12%;
+    --popover: 220 14% 10%;
+    --popover-foreground: 210 20% 88%;
 
     --primary: 24 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 6% 90%;
-    --secondary-foreground: 220 10% 20%;
+    --secondary: 220 12% 16%;
+    --secondary-foreground: 210 20% 75%;
 
-    --muted: 210 6% 92%;
-    --muted-foreground: 220 6% 48%;
+    --muted: 220 12% 14%;
+    --muted-foreground: 215 10% 50%;
 
     --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
@@ -60,25 +60,25 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 8% 88%;
-    --input: 210 8% 88%;
+    --border: 220 12% 18%;
+    --input: 220 12% 18%;
     --ring: 24 95% 53%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
 
-    --sidebar-background: 210 6% 95%;
-    --sidebar-foreground: 220 10% 12%;
+    --sidebar-background: 220 14% 9%;
+    --sidebar-foreground: 210 20% 88%;
     --sidebar-primary: 24 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 6% 90%;
-    --sidebar-accent-foreground: 220 10% 20%;
-    --sidebar-border: 210 8% 88%;
+    --sidebar-accent: 220 12% 16%;
+    --sidebar-accent-foreground: 210 20% 75%;
+    --sidebar-border: 220 12% 18%;
     --sidebar-ring: 24 95% 53%;
 
-    --workshop-surface: 210 6% 94%;
-    --workshop-border: 210 8% 85%;
+    --workshop-surface: 220 14% 12%;
+    --workshop-border: 220 12% 20%;
     --workshop-highlight: 24 95% 53%;
-    --workshop-dim: 220 6% 60%;
+    --workshop-dim: 215 10% 42%;
   }
 }
 
@@ -93,6 +93,22 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-mono tracking-tight;
+  }
+
+  /* Scanline overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsla(220, 14%, 4%, 0.04) 2px,
+      hsla(220, 14%, 4%, 0.04) 4px
+    );
   }
 }
 

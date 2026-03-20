@@ -2,8 +2,9 @@ const AboutSection = () => {
   return (
     <section className="relative z-10 px-6 md:px-12 lg:px-24 py-20 max-w-4xl" id="about">
       <div className="flex items-baseline gap-3 mb-2">
+        <span className="font-mono text-xs text-dim">&#47;&#47;</span>
         <h2 className="text-xl md:text-2xl font-mono font-bold">About</h2>
-        <span className="font-mono text-xs text-highlight uppercase tracking-widest">Philosophy</span>
+        <span className="font-mono text-[10px] text-primary uppercase tracking-widest border border-primary/30 px-2 py-0.5">Operator</span>
       </div>
       <div className="h-px bg-border mb-10" />
 
@@ -27,8 +28,8 @@ const AboutSection = () => {
           manufacturers can compete at scale, rebuild domestic capacity, and
           create the kind of durable value that lasts generations.
         </p>
-        <p className="font-mono text-sm text-dim">
-          Currently building <span className="text-highlight font-bold">Tiber</span> — a modern machine shop
+        <p className="font-mono text-sm text-dim border-l-2 border-primary/40 pl-4">
+          Currently building <span className="text-primary font-bold">Tiber</span> — a modern machine shop
           for the AI age.
         </p>
       </div>

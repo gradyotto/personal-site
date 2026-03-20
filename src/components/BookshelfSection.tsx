@@ -50,15 +50,17 @@ const BookshelfSection = () => {
   return (
     <section className="relative z-10 px-6 md:px-12 lg:px-24 py-20 max-w-5xl" id="bookshelf">
       <div className="flex items-baseline gap-3 mb-2">
+        <span className="font-mono text-xs text-dim">&#47;&#47;</span>
         <h2 className="text-xl md:text-2xl font-mono font-bold">Reading List</h2>
-        <span className="font-mono text-xs text-highlight uppercase tracking-widest">Inputs</span>
+        <span className="font-mono text-[10px] text-primary uppercase tracking-widest border border-primary/30 px-2 py-0.5">Inputs</span>
       </div>
       <div className="h-px bg-border mb-10" />
 
       <div className="space-y-10">
         {categories.map((category) => (
           <div key={category}>
-            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-dim mb-4">
+            <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-dim mb-4 flex items-center gap-2">
+              <span className="text-primary/40">▸</span>
               {category}
             </h3>
             <div className="space-y-0">
