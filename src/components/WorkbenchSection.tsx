@@ -44,8 +44,8 @@ const WorkbenchSection = () => {
   return (
     <section className="relative z-10 px-6 md:px-12 lg:px-24 py-20 max-w-6xl" id="workbench">
       <div className="flex items-baseline gap-3 mb-2">
-        <h2 className="text-xl md:text-2xl font-mono font-bold">The Workbench</h2>
-        <span className="font-mono text-xs text-highlight uppercase tracking-widest">Projects</span>
+        <h2 className="text-xl md:text-2xl font-mono font-bold">Projects</h2>
+        <span className="font-mono text-xs text-highlight uppercase tracking-widest">Work</span>
       </div>
       <div className="h-px bg-border mb-10" />
 
