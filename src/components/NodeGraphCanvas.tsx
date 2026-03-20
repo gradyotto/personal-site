@@ -63,7 +63,7 @@ const NodeGraphCanvas = () => {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const baseOpacity = (1 - dist / connectionDist) * 0.12;
+            const baseOpacity = (1 - dist / connectionDist) * 0.3;
             // Brighten connections near cursor
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
@@ -93,9 +93,9 @@ const NodeGraphCanvas = () => {
 
         ctx.fillStyle = isNearMouse
           ? `hsla(24, 95%, 53%, ${0.4 * (1 - mDist / mouseDist) + 0.15})`
-          : "rgba(120, 120, 130, 0.18)";
+          : "rgba(120, 120, 130, 0.35)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, isNearMouse ? 2 : 1.3, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
 
