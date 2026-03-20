@@ -28,7 +28,7 @@ const NodeGraphCanvas = () => {
     const resizeTimer = setTimeout(resize, 500);
     window.addEventListener("resize", resize);
 
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 18000);
+    const count = Math.floor((window.innerWidth * window.innerHeight) / 11000);
     nodesRef.current = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
