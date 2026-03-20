@@ -28,7 +28,7 @@ const NodeGraphCanvas = () => {
     const resizeTimer = setTimeout(resize, 500);
     window.addEventListener("resize", resize);
 
-    const count = Math.floor((window.innerWidth * window.innerHeight) / 18000);
+    const count = Math.floor((window.innerWidth * window.innerHeight) / 11000);
     nodesRef.current = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -62,7 +62,7 @@ const NodeGraphCanvas = () => {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const baseOpacity = (1 - dist / connectionDist) * 0.3;
+            const baseOpacity = (1 - dist / connectionDist) * 0.45;
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
             const mDist = Math.sqrt((midX - mouse.x) ** 2 + (midY - mouse.y) ** 2);
@@ -71,7 +71,7 @@ const NodeGraphCanvas = () => {
               ctx.strokeStyle = `hsla(24, 95%, 53%, ${baseOpacity + boost})`;
               ctx.lineWidth = 0.8;
             } else {
-              ctx.strokeStyle = `rgba(50, 55, 65, ${baseOpacity + 0.1})`;
+              ctx.strokeStyle = `rgba(70, 75, 85, ${baseOpacity + 0.12})`;
               ctx.lineWidth = 0.5;
             }
             ctx.beginPath();
@@ -90,9 +90,9 @@ const NodeGraphCanvas = () => {
 
         ctx.fillStyle = isNearMouse
           ? `hsla(24, 95%, 53%, ${0.45 * (1 - mDist / mouseDist) + 0.15})`
-          : "rgba(50, 55, 65, 0.5)";
+          : "rgba(75, 80, 90, 0.6)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.5, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, isNearMouse ? 2.8 : 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
 
