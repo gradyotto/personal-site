@@ -20,7 +20,7 @@ const projects: ProjectCard[] = [
     url: "https://www.tibermfg.com",
   },
   {
-    title: "Microfactory OS",
+    title: "Phalanx - Microfactory OS",
     description:
       "Modular software stack for small-batch, high-mix manufacturing cells. Bridging ERP with real-time machine data.",
     tags: ["Software", "IoT", "MES"],
