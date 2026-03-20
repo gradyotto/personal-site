@@ -77,7 +77,7 @@ const NodeGraphCanvas = () => {
               ctx.strokeStyle = `hsla(24, 95%, 53%, ${baseOpacity + boost})`;
               ctx.lineWidth = 0.8;
             } else {
-              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity})`;
+              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity * 1.2})`;
               ctx.lineWidth = 0.5;
             }
             ctx.beginPath();
