@@ -95,8 +95,9 @@ const WorkbenchSection = () => {
                 {project.status}
               </span>
             </div>
-          </div>
-        ))}
+          </Wrapper>
+          );
+        })}
       </div>
     </section>
   );

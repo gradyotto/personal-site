@@ -89,6 +89,17 @@ const BookshelfSection = () => {
                     <div>
                       <span className="font-mono font-bold text-sm">{book.title}</span>
                       <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
+                      {book.status && (
+                        <span className={`font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border ${
+                          book.status === "Read"
+                            ? "text-green-400 border-green-400/30"
+                            : book.status === "In Progress"
+                            ? "text-primary border-primary/30"
+                            : "text-dim border-border"
+                        }`}>
+                          {book.status}
+                        </span>
+                      )}
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed italic">
                       "{book.takeaway}"
