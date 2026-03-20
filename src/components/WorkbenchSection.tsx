@@ -6,6 +6,7 @@ interface ProjectCard {
   tags: string[];
   featured?: boolean;
   status: string;
+  url?: string;
 }
 
 const projects: ProjectCard[] = [
