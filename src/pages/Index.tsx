@@ -9,7 +9,7 @@ import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen relative">
       <NodeGraphCanvas />
       <SiteNav />
       <main className="pt-16">
