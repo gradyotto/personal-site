@@ -3,6 +3,7 @@ interface BookEntry {
   author: string;
   takeaway: string;
   category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals";
+  status?: "Read" | "In Progress" | "Queue";
 }
 
 const books: BookEntry[] = [
