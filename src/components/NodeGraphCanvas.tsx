@@ -56,39 +56,35 @@ const NodeGraphCanvas = () => {
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
       }
 
-      // Draw connections
+      // Draw connections (always visible)
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x;
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const opacity = (1 - dist / connectionDist) * 0.08;
-            ctx.strokeStyle = `rgba(120, 120, 130, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            const baseOpacity = (1 - dist / connectionDist) * 0.12;
+            // Brighten connections near cursor
+            const midX = (nodes[i].x + nodes[j].x) / 2;
+            const midY = (nodes[i].y + nodes[j].y) / 2;
+            const mDist = Math.sqrt((midX - mouse.x) ** 2 + (midY - mouse.y) ** 2);
+            if (mDist < mouseDist) {
+              const boost = (1 - mDist / mouseDist) * 0.2;
+              ctx.strokeStyle = `hsla(24, 95%, 53%, ${baseOpacity + boost})`;
+              ctx.lineWidth = 0.8;
+            } else {
+              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity})`;
+              ctx.lineWidth = 0.5;
+            }
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
           }
         }
-
-        // Mouse proximity connections
-        const mdx = nodes[i].x - mouse.x;
-        const mdy = nodes[i].y - mouse.y;
-        const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
-        if (mDist < mouseDist) {
-          const opacity = (1 - mDist / mouseDist) * 0.25;
-          ctx.strokeStyle = `hsla(24, 95%, 53%, ${opacity})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
       }
 
-      // Draw nodes
+      // Draw nodes (always visible)
       for (const node of nodes) {
         const mdx = node.x - mouse.x;
         const mdy = node.y - mouse.y;
@@ -96,10 +92,10 @@ const NodeGraphCanvas = () => {
         const isNearMouse = mDist < mouseDist;
 
         ctx.fillStyle = isNearMouse
-          ? `hsla(24, 95%, 53%, ${0.6 * (1 - mDist / mouseDist) + 0.08})`
-          : "rgba(120, 120, 130, 0.12)";
+          ? `hsla(24, 95%, 53%, ${0.4 * (1 - mDist / mouseDist) + 0.15})`
+          : "rgba(120, 120, 130, 0.18)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, isNearMouse ? 2 : 1.2, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, isNearMouse ? 2 : 1.3, 0, Math.PI * 2);
         ctx.fill();
       }
 
