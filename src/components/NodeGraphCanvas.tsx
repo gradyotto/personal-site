@@ -90,9 +90,9 @@ const NodeGraphCanvas = () => {
 
         ctx.fillStyle = isNearMouse
           ? `hsla(24, 95%, 53%, ${0.45 * (1 - mDist / mouseDist) + 0.15})`
-          : "rgba(50, 55, 65, 0.5)";
+          : "rgba(75, 80, 90, 0.6)";
         ctx.beginPath();
-        ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.5, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, isNearMouse ? 2.8 : 1.8, 0, Math.PI * 2);
         ctx.fill();
       }
 
