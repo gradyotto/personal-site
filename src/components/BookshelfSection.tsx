@@ -50,7 +50,7 @@ const BookshelfSection = () => {
   return (
     <section className="relative z-10 px-6 md:px-12 lg:px-24 py-20 max-w-5xl" id="bookshelf">
       <div className="flex items-baseline gap-3 mb-2">
-        <h2 className="text-xl md:text-2xl font-mono font-bold">The Bookshelf</h2>
+        <h2 className="text-xl md:text-2xl font-mono font-bold">Reading List</h2>
         <span className="font-mono text-xs text-highlight uppercase tracking-widest">Inputs</span>
       </div>
       <div className="h-px bg-border mb-10" />

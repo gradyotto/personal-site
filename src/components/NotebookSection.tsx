@@ -42,7 +42,7 @@ const NotebookSection = () => {
   return (
     <section className="relative z-10 px-6 md:px-12 lg:px-24 py-20 max-w-4xl" id="notebook">
       <div className="flex items-baseline gap-3 mb-2">
-        <h2 className="text-xl md:text-2xl font-mono font-bold">The Notebook</h2>
+        <h2 className="text-xl md:text-2xl font-mono font-bold">Articles</h2>
         <span className="font-mono text-xs text-highlight uppercase tracking-widest">Writing</span>
       </div>
       <div className="h-px bg-border mb-10" />
