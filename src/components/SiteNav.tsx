@@ -9,7 +9,7 @@ const SiteNav = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-3 flex items-center justify-between bg-background/90 backdrop-blur-md border-b border-border">
       <span className="font-mono font-bold text-sm tracking-tight flex items-center gap-2">
-        <span className="text-primary font-mono text-xs">[~]</span>
+        <span className="text-primary font-mono text-xs">[GO]</span>
         <span>Grady Ottomeyer</span>
       </span>
       <div className="hidden md:flex items-center gap-1">

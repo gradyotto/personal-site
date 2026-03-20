@@ -4,7 +4,7 @@ const HeroSection = () => {
       <div className="mb-4 flex items-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse" />
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
-          Systems Online
+          Grady Ottomeyer
         </span>
       </div>
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-mono font-bold leading-[1.1] mb-6 max-w-3xl">
