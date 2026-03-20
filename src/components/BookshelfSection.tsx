@@ -38,6 +38,20 @@ const books: BookEntry[] = [
     category: "Industrial History & Strategy",
   },
   {
+    title: "Made in the USA: The Rise and Retreat of American Manufacturing",
+    author: "Vaclav Smil",
+    takeaway: "A data-rich history of how America built—and then dismantled—its industrial base.",
+    category: "Industrial History & Strategy",
+    status: "Read",
+  },
+  {
+    title: "Freedom's Forge",
+    author: "Arthur Herman",
+    takeaway: "How American industry mobilized for WWII—proof that manufacturing scale is a national security asset.",
+    category: "Industrial History & Strategy",
+    status: "In Progress",
+  },
+  {
     title: "ROS 2 Documentation",
     author: "Open Robotics",
     takeaway: "The middleware layer for the next generation of physical automation.",
