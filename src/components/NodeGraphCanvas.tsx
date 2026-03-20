@@ -40,7 +40,7 @@ const NodeGraphCanvas = () => {
     }));
 
     const handleMouse = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
+      mouseRef.current = { x: e.clientX, y: e.clientY + window.scrollY };
     };
     window.addEventListener("mousemove", handleMouse);
 
