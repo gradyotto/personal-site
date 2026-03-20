@@ -40,7 +40,7 @@ const NodeGraphCanvas = () => {
     }));
 
     const handleMouse = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
+      mouseRef.current = { x: e.clientX, y: e.clientY + window.scrollY };
     };
     window.addEventListener("mousemove", handleMouse);
 
@@ -67,7 +67,7 @@ const NodeGraphCanvas = () => {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDist) {
-            const baseOpacity = (1 - dist / connectionDist) * 0.3;
+            const baseOpacity = (1 - dist / connectionDist) * 0.45;
             // Brighten connections near cursor
             const midX = (nodes[i].x + nodes[j].x) / 2;
             const midY = (nodes[i].y + nodes[j].y) / 2;
@@ -77,7 +77,7 @@ const NodeGraphCanvas = () => {
               ctx.strokeStyle = `hsla(24, 95%, 53%, ${baseOpacity + boost})`;
               ctx.lineWidth = 0.8;
             } else {
-              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity})`;
+              ctx.strokeStyle = `rgba(120, 120, 130, ${baseOpacity * 1.2})`;
               ctx.lineWidth = 0.5;
             }
             ctx.beginPath();
@@ -96,8 +96,8 @@ const NodeGraphCanvas = () => {
         const isNearMouse = mDist < mouseDist;
 
         ctx.fillStyle = isNearMouse
-          ? `hsla(24, 95%, 53%, ${0.4 * (1 - mDist / mouseDist) + 0.15})`
-          : "rgba(120, 120, 130, 0.35)";
+          ? `hsla(24, 95%, 53%, ${0.4 * (1 - mDist / mouseDist) + 0.2})`
+          : "rgba(120, 120, 130, 0.5)";
         ctx.beginPath();
         ctx.arc(node.x, node.y, isNearMouse ? 2.5 : 1.8, 0, Math.PI * 2);
         ctx.fill();
