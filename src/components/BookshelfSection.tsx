@@ -107,7 +107,7 @@ const BookshelfSection = () => {
             <div>
               <span className="font-mono font-bold text-sm">{book.title}</span>
               <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
-              <span className="font-mono text-[10px] uppercase tracking-wider ml-2 text-dim">{book.category}</span>
+              <span className="font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border border-primary/20 text-primary/70">{book.category}</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed italic">
               "{book.takeaway}"
