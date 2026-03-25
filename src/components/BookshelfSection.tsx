@@ -77,6 +77,10 @@ const BookshelfSection = () => {
         <span className="font-mono text-xs text-dim">&#47;&#47;</span>
         <h2 className="text-xl md:text-2xl font-mono font-bold">Reading List</h2>
         <span className="font-mono text-[10px] text-primary uppercase tracking-widest border border-primary/30 px-2 py-0.5">Inputs</span>
+        <span className="flex items-center gap-1 ml-auto font-mono text-[10px] text-dim">
+          <FileText size={10} className="text-primary/70" />
+          <span>= review written</span>
+        </span>
       </div>
       <div className="h-px bg-border mb-6" />
 
