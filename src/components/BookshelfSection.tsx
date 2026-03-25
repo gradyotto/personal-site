@@ -14,35 +14,28 @@ const books: BookEntry[] = [
     author: "Clayton Christensen",
     takeaway: "Disruption comes from below—incumbents optimize for today while insurgents build for tomorrow.",
     category: "Industrial History & Strategy",
-    status: "Read",
+    status: "Queue",
   },
   {
     title: "American Made",
     author: "Farah Stockman",
     takeaway: "The human cost of deindustrialization is not abstract—it's personal and generational.",
     category: "Industrial History & Strategy",
-    status: "Read",
+    status: "Queue",
   },
   {
     title: "Outlive",
     author: "Peter Attia",
     takeaway: "Longevity is an engineering problem—optimize the inputs, extend the runway.",
     category: "Health & Longevity",
-    status: "Read",
-  },
-  {
-    title: "Machinery's Handbook",
-    author: "Erik Oberg",
-    takeaway: "The machinist's bible. If you can't find it here, you're asking the wrong question.",
-    category: "Technical Manuals",
-    status: "Read",
+    status: "Queue",
   },
   {
     title: "The Soul of a New Machine",
     author: "Tracy Kidder",
     takeaway: "Great engineering is equal parts obsession and craft—the best teams are small and unreasonable.",
     category: "Industrial History & Strategy",
-    status: "Read",
+    status: "Queue",
   },
   {
     title: "Made in the USA: The Rise and Retreat of American Manufacturing",
@@ -114,7 +107,7 @@ const BookshelfSection = () => {
             <div>
               <span className="font-mono font-bold text-sm">{book.title}</span>
               <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
-              <span className="font-mono text-[10px] uppercase tracking-wider ml-2 text-dim">{book.category}</span>
+              <span className="font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border border-primary/20 text-primary/70">{book.category}</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed italic">
               "{book.takeaway}"
