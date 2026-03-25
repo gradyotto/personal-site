@@ -34,11 +34,12 @@ const projects: ProjectCard[] = [
     status: "Experiment",
   },
   {
-    title: "Supply Chain Graph",
+    title: "Commodity Pulse Tool",
     description:
       "Knowledge graph mapping domestic supplier networks for critical components. Making reshoring decisions data-driven.",
     tags: ["Data", "Supply Chain", "Graph DB"],
     status: "Research",
+    url: "https://pulse.tibermfg.com",
   },
 ];
 
