@@ -46,6 +46,7 @@ const books: BookEntry[] = [
     takeaway: "A data-rich history of how America built—and then dismantled—its industrial base.",
     category: "Industrial History & Strategy",
     status: "Read",
+    reviewSlug: "made-in-the-usa-review",
   },
   {
     title: "Freedom's Forge",
