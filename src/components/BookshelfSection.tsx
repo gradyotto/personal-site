@@ -8,6 +8,7 @@ interface BookEntry {
   takeaway: string;
   category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals";
   status: "Read" | "In Progress" | "Queue";
+  reviewSlug?: string;
 }
 
 const books: BookEntry[] = [
