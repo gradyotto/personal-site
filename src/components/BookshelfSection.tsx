@@ -102,16 +102,11 @@ const BookshelfSection = () => {
         {filteredBooks.map((book) => (
           <div
             key={book.title}
-            className="py-4 border-b border-border last:border-b-0 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-2 md:gap-6"
+            className="py-3 border-b border-border last:border-b-0"
           >
-            <div>
-              <span className="font-mono font-bold text-sm">{book.title}</span>
-              <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
-              <span className="font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border border-primary/20 text-primary/70">{book.category}</span>
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed italic">
-              "{book.takeaway}"
-            </p>
+            <span className="font-mono font-bold text-sm">{book.title}</span>
+            <span className="text-dim font-mono text-xs ml-2">— {book.author}</span>
+            <span className="font-mono text-[10px] uppercase tracking-wider ml-2 px-1.5 py-0.5 border border-primary/20 text-primary/70">{book.category}</span>
           </div>
         ))}
         {filteredBooks.length === 0 && (
