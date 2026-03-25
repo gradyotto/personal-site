@@ -20,26 +20,19 @@ const projects: ProjectCard[] = [
     url: "https://www.tibermfg.com",
   },
   {
-    title: "Phalanx - Microfactory OS",
-    description:
-      "Modular software stack for small-batch, high-mix manufacturing cells. Bridging ERP with real-time machine data.",
-    tags: ["Software", "IoT", "MES"],
-    status: "In Progress",
-  },
-  {
-    title: "ROS 2 Pick-and-Place",
-    description:
-      "6-DOF robotic arm experiment for automated part handling in a low-volume production environment.",
-    tags: ["Robotics", "ROS 2", "Hardware"],
-    status: "Experiment",
-  },
-  {
     title: "Commodity Pulse Tool",
     description:
       "Knowledge graph mapping domestic supplier networks for critical components. Making reshoring decisions data-driven.",
     tags: ["Data", "Supply Chain", "Graph DB"],
     status: "Research",
     url: "https://pulse.tibermfg.com",
+  },
+  {
+    title: "Phalanx - Microfactory OS",
+    description:
+      "Modular software stack for small-batch, high-mix manufacturing cells. Bridging ERP with real-time machine data.",
+    tags: ["Software", "IoT", "MES"],
+    status: "In Progress",
   },
 ];
 
