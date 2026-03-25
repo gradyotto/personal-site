@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface BookEntry {
   title: string;
@@ -6,6 +8,7 @@ interface BookEntry {
   takeaway: string;
   category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals";
   status: "Read" | "In Progress" | "Queue";
+  reviewSlug?: string;
 }
 
 const books: BookEntry[] = [
@@ -43,6 +46,7 @@ const books: BookEntry[] = [
     takeaway: "A data-rich history of how America built—and then dismantled—its industrial base.",
     category: "Industrial History & Strategy",
     status: "Read",
+    reviewSlug: "made-in-the-usa-review",
   },
   {
     title: "Freedom's Forge",
@@ -73,6 +77,10 @@ const BookshelfSection = () => {
         <span className="font-mono text-xs text-dim">&#47;&#47;</span>
         <h2 className="text-xl md:text-2xl font-mono font-bold">Reading List</h2>
         <span className="font-mono text-[10px] text-primary uppercase tracking-widest border border-primary/30 px-2 py-0.5">Inputs</span>
+        <span className="flex items-center gap-1 ml-auto font-mono text-[10px] text-dim">
+          <FileText size={10} className="text-primary/70" />
+          <span>= review written</span>
+        </span>
       </div>
       <div className="h-px bg-border mb-6" />
 
@@ -105,6 +113,11 @@ const BookshelfSection = () => {
             className="py-3 border-b border-border last:border-b-0 flex flex-wrap items-baseline gap-x-2 gap-y-1"
           >
             <span className="font-mono font-bold text-sm">{book.title}</span>
+            {book.reviewSlug && (
+              <Link to={`/articles/${book.reviewSlug}`} title="Read review">
+                <FileText size={12} className="text-primary/70 hover:text-primary transition-colors" />
+              </Link>
+            )}
             <span className="text-dim font-mono text-xs whitespace-nowrap">— {book.author}</span>
             <span className="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border border-primary/20 text-primary/70 whitespace-nowrap">{book.category}</span>
           </div>
