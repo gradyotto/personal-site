@@ -71,7 +71,7 @@ const WorkbenchSection = () => {
                   </span>
                 )}
               </div>
-              <ArrowUpRight className="w-4 h-4 text-dim group-hover:text-primary transition-colors" />
+              {project.url && <ArrowUpRight className="w-4 h-4 text-dim group-hover:text-primary transition-colors" />}
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               {project.description}
