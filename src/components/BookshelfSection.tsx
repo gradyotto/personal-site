@@ -113,6 +113,11 @@ const BookshelfSection = () => {
             className="py-3 border-b border-border last:border-b-0 flex flex-wrap items-baseline gap-x-2 gap-y-1"
           >
             <span className="font-mono font-bold text-sm">{book.title}</span>
+            {book.reviewSlug && (
+              <Link to={`/articles/${book.reviewSlug}`} title="Read review">
+                <FileText size={12} className="text-primary/70 hover:text-primary transition-colors" />
+              </Link>
+            )}
             <span className="text-dim font-mono text-xs whitespace-nowrap">— {book.author}</span>
             <span className="font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border border-primary/20 text-primary/70 whitespace-nowrap">{book.category}</span>
           </div>
