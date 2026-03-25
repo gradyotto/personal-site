@@ -102,7 +102,7 @@ const BookshelfSection = () => {
         {filteredBooks.map((book) => (
           <div
             key={book.title}
-            className="py-3 border-b border-border last:border-b-0 grid grid-cols-[1fr_auto_auto] gap-x-3 items-baseline"
+            className="py-3 border-b border-border last:border-b-0 flex flex-wrap items-baseline gap-x-2 gap-y-1"
           >
             <span className="font-mono font-bold text-sm">{book.title}</span>
             <span className="text-dim font-mono text-xs whitespace-nowrap">— {book.author}</span>
