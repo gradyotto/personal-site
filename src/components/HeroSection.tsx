@@ -12,7 +12,7 @@ const HeroSection = () => {
         <span className="text-highlight">American</span> industrial base
       </h1>
       <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed mb-10">
-        Techno-optimist and American Dynamist. My background in on-demand logistics taught me how to move things efficiently; now, my focus is on how we make them. I believe reshoring American manufacturing is the single most pivotal step toward our long-term national success and resilience.
+        Techno-optimist and American Dynamist. I believe reshoring American manufacturing is the single most pivotal step toward our long-term national success and resilience.
       </p>
       <div className="flex gap-4 font-mono text-xs uppercase tracking-widest text-dim">
         <span className="flex items-center gap-1.5">
