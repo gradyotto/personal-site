@@ -54,7 +54,9 @@ const WorkbenchSection = () => {
           <Wrapper
             key={project.title}
             {...wrapperProps}
-            className={`group p-5 border transition-all cursor-pointer hover:border-primary/40 block ${
+            className={`group p-5 border transition-all block ${
+              project.url ? "cursor-pointer hover:border-primary/40" : "cursor-default"
+            } ${
               project.featured
                 ? "border-primary/30 bg-card md:col-span-2"
                 : "border-border bg-card"
