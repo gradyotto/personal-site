@@ -57,7 +57,7 @@ const books: BookEntry[] = [
   },
   {
     title: "The Book of Elon",
-    author: "",
+    author: "Eric Jorgenson",
     takeaway: "",
     category: "Biography",
     status: "In Progress",
