@@ -6,7 +6,7 @@ interface BookEntry {
   title: string;
   author: string;
   takeaway: string;
-  category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals";
+  category: "Industrial History & Strategy" | "Health & Longevity" | "Technical Manuals" | "Biography" | "Business & Strategy" | "Fiction";
   status: "Read" | "In Progress" | "Queue";
   reviewSlug?: string;
 }
@@ -54,6 +54,69 @@ const books: BookEntry[] = [
     takeaway: "How American industry mobilized for WWII—proof that manufacturing scale is a national security asset.",
     category: "Industrial History & Strategy",
     status: "In Progress",
+  },
+  {
+    title: "The Book of Elon",
+    author: "",
+    takeaway: "",
+    category: "Biography",
+    status: "In Progress",
+  },
+  {
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    takeaway: "Genius and abrasion in equal measure—a portrait of how obsession over craft can build and break.",
+    category: "Biography",
+    status: "Read",
+  },
+  {
+    title: "The Technological Republic",
+    author: "Alexander Karp",
+    takeaway: "Silicon Valley and the state must reconcile—technology without democratic accountability is a liability.",
+    category: "Business & Strategy",
+    status: "Read",
+  },
+  {
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    takeaway: "Science as survival—a lone astronaut solves the impossible through first principles and stubborn curiosity.",
+    category: "Fiction",
+    status: "Read",
+  },
+  {
+    title: "Exhalation",
+    author: "Ted Chiang",
+    takeaway: "Ideas as literature—each story a rigorous thought experiment on consciousness, time, and free will.",
+    category: "Fiction",
+    status: "Read",
+  },
+  {
+    title: "Zero to One",
+    author: "Peter Thiel",
+    takeaway: "The best companies create monopolies by building something new, not competing on an existing frontier.",
+    category: "Business & Strategy",
+    status: "Read",
+  },
+  {
+    title: "Elon Musk",
+    author: "Walter Isaacson",
+    takeaway: "Risk tolerance at civilizational scale—a study in what extreme conviction costs and occasionally builds.",
+    category: "Biography",
+    status: "Read",
+  },
+  {
+    title: "Chip War",
+    author: "Chris Miller",
+    takeaway: "Semiconductors are the oil of the 21st century—whoever controls fabrication controls geopolitical leverage.",
+    category: "Industrial History & Strategy",
+    status: "Read",
+  },
+  {
+    title: "Table for Two",
+    author: "Amor Towles",
+    takeaway: "Elegance and wit in every setting—Towles turns constraint into form and form into pleasure.",
+    category: "Fiction",
+    status: "Read",
   },
   {
     title: "ROS 2 Documentation",
