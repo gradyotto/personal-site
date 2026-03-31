@@ -10,27 +10,19 @@ const AboutSection = () => {
 
       <div className="space-y-5 text-base text-muted-foreground leading-[1.8] max-w-2xl">
         <p>
-          I build things—software that ships and hardware that ships{" "}
-          <span className="italic">product</span>. My work lives at the
-          intersection of artificial intelligence and physical manufacturing,
-          where bits meet atoms and code meets coolant.
+          My background is in logistics and software: routing systems, operational data, platform infrastructure. I've spent my career working on the operational layer that powers complex businesses.
         </p>
         <p>
-          I believe the next great American companies won't just write
-          software—they'll make things. Real, tangible things. The kind you
-          can hold, measure, and trust. Modern AI and software tools can
-          supercharge traditional industry, but only if builders are willing
-          to get their hands dirty.
+          The consensus has been for the past 25 years that software will eat the world. The more time I spend in software, the more I realize we must pay attention to hardware. America has spent a generation offshoring the industries that underpin everything else — the parts, the materials, the fabrication capacity that OEMs depend on and that national resilience requires. We are closer to the consequences of that decision than most people realize.
         </p>
         <p>
-          Physical resilience in supply chains isn't a nice-to-have—it's a
-          strategic imperative. I'm working to prove that small, tech-enabled
-          manufacturers can compete at scale, rebuild domestic capacity, and
-          create the kind of durable value that lasts generations.
+          Tiber is my answer to that. We supply American OEMs with the critical components they need, built domestically, with the operational rigor of a modern technology company. The goal is simple: reduce foreign dependency in the supply chains that actually matter, one part at a time.
+        </p>
+        <p>
+          I believe the next decade will determine the next century of American industry. I'd rather be building than watching.
         </p>
         <p className="font-mono text-sm text-dim border-l-2 border-primary/40 pl-4">
-          Currently building <span className="text-primary font-bold">Tiber</span> — a modern machine shop
-          for the AI age.
+          Currently building <span className="text-primary font-bold">Tiber</span> — Critical parts for the American Industrial Base.
         </p>
       </div>
     </section>
