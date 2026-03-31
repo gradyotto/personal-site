@@ -13,10 +13,7 @@ const AboutSection = () => {
           My background is in logistics and software: routing systems, operational data, platform infrastructure. I've spent my career working on the operational layer that powers complex businesses.
         </p>
         <p>
-          The consensus has been for the past 25 years that software will eat the world. The more time I spend in software, the more I realize we must pay attention to hardware. America has spent a generation offshoring the industries that underpin everything else — the parts, the materials, the fabrication capacity that OEMs depend on and that national resilience requires. We are closer to the consequences of that decision than most people realize.
-        </p>
-        <p>
-          Tiber is my answer to that. We supply American OEMs with the critical components they need, built domestically, with the operational rigor of a modern technology company. The goal is simple: reduce foreign dependency in the supply chains that actually matter, one part at a time.
+          The consensus has been for the past 25 years that software will eat the world. The more time I spend in software, the more I realize we must also pay attention to hardware. America has spent a generation offshoring the industries that underpin everything else — the parts, the materials, the fabrication capacity that OEMs depend on and that national resilience requires. We are closer to the consequences of that decision than most people realize.
         </p>
         <p>
           I believe the next decade will determine the next century of American industry. I'd rather be building than watching.
